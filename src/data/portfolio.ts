@@ -184,6 +184,8 @@ export type Project = {
   caseStudy: { step: string; text: string }[];
   differently: string;
   featured?: boolean;
+  githubUrl?: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -371,6 +373,134 @@ export const projects: Project[] = [
     ],
     differently:
       "Prototype the failure states first — dead battery, no signal, someone leaves the group — because that's where coordination products actually earn trust.",
+  },
+  {
+    id: "saathi-credit",
+    index: "05",
+    title: "The Consent Screen Competitors Skip",
+    subtitle: "Lending product design for India's new-to-credit borrowers",
+    org: "Personal · Solo PM + designer",
+    year: "2026",
+    role: "Product design, PRD, architecture, prototype",
+    tags: ["Fintech", "PRD", "Prototype", "Compliance"],
+    headline:
+      "I benchmarked 7 Indian lenders and ran a real application through the best-designed one. It rejected a plausible applicant with no explanation — and fired an undisclosed hard credit check before showing a consent screen.",
+    metrics: [
+      { value: "7", label: "lenders benchmarked" },
+      { value: "1 of 7", label: "offer a true credit line" },
+      { value: "1", label: "undisclosed credit-check bug found" },
+    ],
+    caseStudy: [
+      {
+        step: "Problem",
+        text:
+          "A benchmark of seven lenders — three fintechs, four banks/NBFCs — across product, onboarding, features, and traction found every one underwrites against a bureau file or income floor. A thin or absent credit history is treated as a rejection, not a servable case.",
+      },
+      {
+        step: "Discovery",
+        text:
+          "Ran a real application through the best-designed funnel in the set instead of reading marketing pages. It rejected a plausible applicant with no explanation, and fired an undisclosed hard bureau check the moment identity details were submitted — confirmed by a real-time SMS, with no consent screen shown first.",
+      },
+      {
+        step: "Define",
+        text:
+          "Wrote a full PRD: a north-star metric tying disbursal to on-time repayment, prioritised requirements, an MVP sequencing plan, and a compliance table against RBI's Digital Lending Guidelines, India's DPDP Act, the Account Aggregator framework, and KYC regulation.",
+      },
+      {
+        step: "Deliver",
+        text:
+          "Mapped the backend API sequence from authentication through disbursal and built a clickable prototype covering both approved and declined borrower journeys, centred on a consent screen that states exactly what gets checked — and whether it's a soft or hard pull — before it runs.",
+      },
+      {
+        step: "Measure",
+        text:
+          "Real click-path testing on my own prototype, not just a static design, surfaced a genuine double-fire bug on a custom checkbox — the kind of defect that ships invisibly when a design is only described, not tested.",
+      },
+    ],
+    differently:
+      "Validate the compliance table with an actual RBI-licensed Account Aggregator partner before finalising the architecture, not after.",
+  },
+];
+
+export type SideProject = {
+  id: string;
+  title: string;
+  tagline: string;
+  problem: string;
+  numbers: { value: string; label: string }[];
+  stack: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+};
+
+export const sideProjects: SideProject[] = [
+  {
+    id: "skillaxy",
+    title: "Skillaxy",
+    tagline: "A skill-transferability engine, not an LLM guessing your next career",
+    problem:
+      "The early version let an LLM free-form career advice from two job titles — inventing skills and stepping-stone roles that didn't exist. Replaced it with a transferability engine computed from real O*NET occupational data: capability vectors, distinctiveness-weighted overlap scoring, and shortest-path stepping-stone routing through an interactive, pannable skill galaxy — explainable and reproducible instead of guessed.",
+    numbers: [
+      { value: "230+", label: "roles, skills & education nodes" },
+      { value: "0", label: "LLM-invented skills left in the output" },
+    ],
+    stack: ["React", "TypeScript", "Supabase", "Python", "O*NET data"],
+    githubUrl: "https://github.com/deep195/galaxy",
+    liveUrl: "https://galaxy-zeta-brown.vercel.app",
+  },
+  {
+    id: "oauth-setup-guides",
+    title: "OAuth Setup Guides",
+    tagline: "Tells you what it actually takes to register your own OAuth app",
+    problem:
+      "A developer wiring up a third-party integration has no upfront way to know whether registering an OAuth app is a 10-minute form or a multi-week enterprise review — that answer is scattered across each provider's own docs. Built a library of pre-generated guides plus a live pipeline that researches, drafts, and fact-checks a guide for any app on demand, flagging every claim it can't verify as \"not specified\" instead of guessing.",
+    numbers: [
+      { value: "14", label: "providers pre-generated, zero API calls" },
+      { value: "4", label: "pipeline stages, self fact-checked" },
+    ],
+    stack: ["Next.js", "TypeScript", "Readability", "DuckDuckGo search"],
+    githubUrl: "https://github.com/deep195/oauth-setup-guides",
+    liveUrl: "https://oauth-setup-guides-one.vercel.app",
+  },
+  {
+    id: "weight-of-bridges",
+    title: "The Weight of Bridges",
+    tagline: "A RAG chatbot that proves its safety guardrails instead of claiming them",
+    problem:
+      "Most RAG demos assert their system is safe. This one measures it: an 8-chapter original story covering serious adult themes is served to 5 personas (Child, Adult, Doctor, Engineer, Finance), and an evals dashboard scores a baseline run with guardrails off against the hardened pipeline — showing the actual score delta the safety layer produces, not just a claim that it works.",
+    numbers: [
+      { value: "5", label: "personas, one shared knowledge base" },
+      { value: "2", label: "pipelines scored: baseline vs. hardened" },
+    ],
+    stack: ["Next.js", "Supabase pgvector", "Groq", "OpenRouter"],
+    githubUrl: "https://github.com/deep195/chatbot",
+    liveUrl: "https://weight-of-bridges.vercel.app",
+  },
+  {
+    id: "voice-agent",
+    title: "Local Voice Agent",
+    tagline: "A voice assistant with no API keys and no per-token bill",
+    problem:
+      "Cloud voice assistants mean an API key, an account, and a bill per token. Built a push-to-talk agent that runs entirely on a laptop — faster-whisper hears, a local Ollama model thinks, Kokoro speaks — with a live dashboard for retuning every voice parameter (pacing, pauses, breath) while it's still mid-sentence, with nothing restarting.",
+    numbers: [
+      { value: "$0", label: "per-token cost, fully offline" },
+      { value: "3", label: "local models chained, zero cloud calls" },
+    ],
+    stack: ["Python", "faster-whisper", "Ollama", "Kokoro TTS"],
+    githubUrl: "https://github.com/deep195/voice-agent",
+  },
+  {
+    id: "project-chat",
+    title: "Project Chat",
+    tagline: "A Slack mirror that strips sensitive data before a freelancer ever sees it",
+    problem:
+      "Sharing a Slack channel with an external freelancer means sharing everything in it — money, rates, credentials, client identity. Built a filtered, read-only mirror: a regex-plus-optional-LLM pipeline blocks sensitive messages before they publish, holds anything flagged in a moderation queue, and can relay approved messages on to WhatsApp.",
+    numbers: [
+      { value: "<3s", label: "webhook signature-verify & ack" },
+      { value: "4s", label: "feed refresh interval" },
+    ],
+    stack: ["Next.js", "Supabase", "Slack API", "WhatsApp Cloud API"],
+    liveUrl: "https://slack-relay-inky.vercel.app",
   },
 ];
 
