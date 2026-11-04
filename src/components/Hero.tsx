@@ -58,12 +58,16 @@ export default function Hero() {
 
           <Rise inView={false} delay={0.5}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="#reel" className="btn-hard">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent("play-reel"))}
+                className="btn-hard"
+              >
                 Play the reel
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
                   <path d="M6 1v10M2 7l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                 </svg>
-              </a>
+              </button>
               <a href="#work" className="btn-ghost">
                 See the work
               </a>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { acts, type Pose } from "@/data/portfolio";
 
@@ -135,18 +135,47 @@ export default function Journey() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const [act, setAct] = useState(0);
+  // While "Play the reel" is driving the sequence, the scroll-position
+  // listener below is ignored — rapid successive programmatic scrollTo
+  // calls make its progress readings glitch, so autoplay is the sole
+  // source of truth for `act` until it finishes.
+  const autoplaying = useRef(false);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (autoplaying.current) return;
     const next = Math.max(0, Math.min(acts.length - 1, Math.floor(v * acts.length)));
     setAct((prev) => (prev === next ? prev : next));
   });
 
-  const go = (i: number) => {
+  const go = useCallback((i: number) => {
     const el = ref.current;
     if (!el) return;
     const travel = el.offsetHeight - window.innerHeight;
     window.scrollTo({ top: el.offsetTop + (travel * (i + 0.15)) / acts.length, behavior: "smooth" });
-  };
+  }, []);
+
+  // "Play the reel" (triggered from the Hero button): scroll through all four
+  // acts automatically instead of requiring a manual scroll.
+  useEffect(() => {
+    function playReel() {
+      autoplaying.current = true;
+      setAct(0);
+      go(0);
+      let i = 0;
+      const timer = setInterval(() => {
+        i += 1;
+        if (i >= acts.length) {
+          clearInterval(timer);
+          autoplaying.current = false;
+          return;
+        }
+        setAct(i);
+        go(i);
+      }, 2600);
+    }
+    window.addEventListener("play-reel", playReel);
+    return () => window.removeEventListener("play-reel", playReel);
+  }, [go]);
 
   const current = acts[act];
 
