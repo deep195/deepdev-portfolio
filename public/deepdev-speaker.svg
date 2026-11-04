@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1365" width="1024" height="1365">
+<defs>
+  <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8eee3"/><stop offset="1" stop-color="#f3e2d2"/></linearGradient>
+  <linearGradient id="blue" x2="0.9" y2="1"><stop stop-color="#2878dc"/><stop offset=".55" stop-color="#1765c5"/><stop offset="1" stop-color="#104d9d"/></linearGradient>
+  <linearGradient id="skin" x2="1" y2="1"><stop stop-color="#e7ad83"/><stop offset="1" stop-color="#bd7958"/></linearGradient>
+  <linearGradient id="hair" x2="0" y2="1"><stop stop-color="#38251f"/><stop offset="1" stop-color="#171311"/></linearGradient>
+  <linearGradient id="pants" x2="1" y2="1"><stop stop-color="#39322e"/><stop offset="1" stop-color="#211e1c"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<!-- warm paper background and fine grid -->
+<rect width="1024" height="1365" fill="url(#bg)"/>
+<g stroke="#d9c9b9" stroke-width="1" opacity=".28">
+  <path d="M0 180H1024M0 360H1024M0 540H1024M0 720H1024M0 900H1024M0 1080H1024M0 1260H1024"/>
+  <path d="M170 0V1365M340 0V1365M512 0V1365M682 0V1365M852 0V1365"/>
+</g>
+<!-- subtle background geometry -->
+<g fill="#d9c5b0" opacity=".17">
+ <rect x="205" y="340" width="74" height="540" rx="37"/>
+ <rect x="746" y="335" width="74" height="550" rx="37" transform="rotate(18 783 610)"/>
+</g>
+<!-- halo -->
+<circle cx="518" cy="303" r="177" fill="#fff2d6" opacity=".62"/>
+<circle cx="518" cy="303" r="178" fill="none" stroke="#e8a526" stroke-width="5" stroke-dasharray="2 25" stroke-linecap="round"/>
+<path d="M518 68l21 31-21 31-21-31z" fill="#f5bd3f" stroke="#d88b0c" stroke-width="5"/>
+<path d="M308 357l24-16 24 16-24 16zM700 357l24-16 24 16-24 16z" fill="#f2b52e" stroke="#d99617" stroke-width="3"/>
+<!-- floor shadow -->
+<ellipse cx="516" cy="1260" rx="238" ry="28" fill="#9d8067" opacity=".28"/>
+<!-- legs -->
+<path d="M414 914 Q463 904 500 918 L497 1195 Q493 1220 467 1223 L420 1216 Q405 1208 407 1185Z" fill="url(#pants)" stroke="#171514" stroke-width="7"/>
+<path d="M512 916 Q559 906 609 918 L614 1187 Q612 1212 589 1219 L536 1220 Q515 1212 514 1188Z" fill="url(#pants)" stroke="#171514" stroke-width="7"/>
+<path d="M447 932L432 1165M564 933L551 1172" stroke="#5a514b" stroke-width="8" opacity=".35"/>
+<!-- shoes -->
+<path d="M412 1187 Q441 1198 481 1188 Q505 1197 503 1231 Q501 1255 477 1260 L402 1257 Q380 1253 386 1228 Q393 1203 412 1187Z" fill="#211e1c" stroke="#100f0e" stroke-width="8"/>
+<path d="M535 1189 Q574 1198 610 1187 Q637 1198 645 1228 Q651 1254 625 1260 L548 1258 Q523 1254 525 1230Z" fill="#211e1c" stroke="#100f0e" stroke-width="8"/>
+<path d="M394 1240Q444 1250 493 1240M536 1240Q588 1251 639 1240" fill="none" stroke="#d1c4b6" stroke-width="7"/>
+<path d="M422 1218l50 0m-42 12h35m108-12h47m-41 12h31" stroke="#5d5650" stroke-width="5" stroke-linecap="round"/>
+<!-- neck -->
+<path d="M473 452L472 523Q515 552 558 519L555 449Z" fill="url(#skin)" stroke="#211a17" stroke-width="7"/>
+<!-- arms behind torso -->
+<path d="M409 535Q373 553 350 621L302 744Q293 771 313 785Q333 796 348 773L421 653L460 581Z" fill="url(#skin)" stroke="#211a17" stroke-width="8" stroke-linejoin="round"/>
+<path d="M616 535Q654 547 678 610L739 738Q751 765 731 783Q710 798 694 773L616 649L578 580Z" fill="url(#skin)" stroke="#211a17" stroke-width="8" stroke-linejoin="round"/>
+<!-- left sleeve -->
+<path d="M408 535Q438 513 470 525L466 620Q437 651 386 629L365 611Q380 558 408 535Z" fill="url(#blue)" stroke="#171514" stroke-width="8"/>
+<!-- right sleeve -->
+<path d="M555 525Q595 512 625 540Q650 568 657 614L622 637Q580 651 548 620Z" fill="url(#blue)" stroke="#171514" stroke-width="8"/>
+<!-- torso shirt -->
+<path d="M465 514Q487 532 515 532Q545 531 565 513Q610 521 628 556L653 853Q657 900 632 909Q516 925 401 909Q377 903 382 866L401 566Q418 527 465 514Z" fill="url(#blue)" stroke="#171514" stroke-width="9" stroke-linejoin="round"/>
+<!-- shirt collar -->
+<path d="M468 515L512 568L489 600L455 536Z" fill="#e9edf0" stroke="#171514" stroke-width="7"/>
+<path d="M565 515L515 568L540 600L579 536Z" fill="#e9edf0" stroke="#171514" stroke-width="7"/>
+<!-- placket and buttons -->
+<path d="M516 565L515 906" stroke="#0f4f9e" stroke-width="7" opacity=".8"/>
+<g fill="#f3eee7" stroke="#164a83" stroke-width="3"><circle cx="543" cy="625" r="7"/><circle cx="543" cy="690" r="7"/><circle cx="543" cy="755" r="7"/></g>
+<!-- chest pocket -->
+<path d="M579 626L627 626L626 685Q602 694 579 682Z" fill="#1b5eae" stroke="#123f79" stroke-width="5"/>
+<!-- shirt folds -->
+<g fill="none" stroke="#75a8e7" stroke-width="7" opacity=".35" stroke-linecap="round">
+ <path d="M411 706l65 30M405 817l69-18M566 818l58-18M568 560l48 39M399 600l44 26"/>
+</g>
+<!-- hands -->
+<path d="M301 744Q282 737 274 755Q266 777 285 790Q304 802 320 784L335 762Q329 743 301 744Z" fill="url(#skin)" stroke="#211a17" stroke-width="7"/>
+<path d="M731 740Q753 733 765 752Q777 775 758 792Q740 808 723 788L713 765Q716 747 731 740Z" fill="url(#skin)" stroke="#211a17" stroke-width="7"/>
+<!-- bracelet on right wrist (microphone hand side) -->
+<path d="M404 639Q424 655 447 647" fill="none" stroke="#b9414a" stroke-width="11" stroke-linecap="round"/>
+<path d="M404 639Q424 655 447 647" fill="none" stroke="#e58a83" stroke-width="3" stroke-linecap="round"/>
+<!-- microphone arm/hand raised across chest -->
+<path d="M408 651Q430 624 458 590L498 538Q514 516 535 531Q554 547 538 568L486 634Q464 670 431 688Q409 693 397 675Z" fill="url(#skin)" stroke="#211a17" stroke-width="8"/>
+<path d="M487 551Q501 521 525 519Q546 521 553 544L548 566Q538 581 518 576L495 568Z" fill="url(#skin)" stroke="#211a17" stroke-width="7"/>
+<!-- mic -->
+<g transform="rotate(-8 564 480)">
+ <rect x="545" y="435" width="43" height="150" rx="17" fill="#292725" stroke="#111" stroke-width="7"/>
+ <ellipse cx="566" cy="439" rx="23" ry="31" fill="#33302d" stroke="#111" stroke-width="7"/>
+ <path d="M548 426Q566 410 585 426M548 437H585M548 448H585M548 459H585" stroke="#77716a" stroke-width="4"/>
+ <path d="M550 481H583M550 495H583M550 509H583" stroke="#77716a" stroke-width="3" opacity=".7"/>
+ <path d="M550 566H582" stroke="#aaa39a" stroke-width="4"/>
+</g>
+<!-- face -->
+<ellipse cx="518" cy="315" rx="111" ry="132" fill="url(#skin)" stroke="#211a17" stroke-width="8"/>
+<!-- ears -->
+<ellipse cx="410" cy="325" rx="22" ry="34" fill="#c98765" stroke="#211a17" stroke-width="7"/>
+<ellipse cx="626" cy="325" rx="22" ry="34" fill="#c98765" stroke="#211a17" stroke-width="7"/>
+<!-- hair silhouette -->
+<path d="M405 319Q385 266 407 213Q424 166 468 151Q500 128 539 145Q588 144 617 180Q649 218 631 292L620 332Q604 300 590 279Q568 264 547 250Q515 277 481 283Q449 291 425 332Z" fill="url(#hair)" stroke="#171311" stroke-width="9" stroke-linejoin="round"/>
+<!-- curls -->
+<g fill="none" stroke="#6a4938" stroke-width="9" stroke-linecap="round" opacity=".75">
+ <path d="M423 229Q421 193 453 183Q469 168 485 185"/>
+ <path d="M465 165Q493 142 514 167Q530 148 552 165"/>
+ <path d="M534 170Q560 148 581 178Q606 185 610 216"/>
+ <path d="M413 270Q431 232 456 236"/>
+ <path d="M476 213Q498 187 519 205"/>
+ <path d="M548 209Q575 188 597 222"/>
+</g>
+<!-- beard silhouette and moustache -->
+<path d="M418 355Q438 401 469 420Q515 454 562 420Q600 395 618 352Q618 426 576 459Q548 483 517 479Q481 476 455 451Q423 420 418 355Z" fill="#29201d" opacity=".97"/>
+<path d="M464 361Q482 344 505 357Q517 365 520 374Q534 354 556 354Q578 354 588 372Q575 395 552 394Q535 390 519 383Q501 397 481 390Q467 385 464 361Z" fill="#211916"/>
+<!-- nose -->
+<path d="M520 319Q512 346 520 354Q530 361 540 352" fill="none" stroke="#9b6049" stroke-width="6" stroke-linecap="round"/>
+<!-- glasses -->
+<g fill="none" stroke="#171717" stroke-width="9">
+ <rect x="430" y="284" width="82" height="57" rx="15"/>
+ <rect x="525" y="284" width="82" height="57" rx="15"/>
+ <path d="M512 302Q518 295 525 302M430 302L411 295M607 302L628 295"/>
+</g>
+<g fill="#211a17"><ellipse cx="470" cy="312" rx="7" ry="10"/><ellipse cx="565" cy="312" rx="7" ry="10"/></g>
+<g fill="#fff" opacity=".8"><circle cx="473" cy="308" r="3"/><circle cx="568" cy="308" r="3"/></g>
+<!-- eyebrows -->
+<path d="M444 274Q471 260 496 272M539 272Q566 259 590 274" fill="none" stroke="#29201d" stroke-width="8" stroke-linecap="round"/>
+<!-- smile -->
+<path d="M490 401Q518 424 550 400" fill="none" stroke="#6e3328" stroke-width="7" stroke-linecap="round"/>
+<!-- cheek warmth -->
+<ellipse cx="448" cy="363" rx="17" ry="9" fill="#e98e77" opacity=".28"/>
+<ellipse cx="589" cy="363" rx="17" ry="9" fill="#e98e77" opacity=".28"/>
+</svg>

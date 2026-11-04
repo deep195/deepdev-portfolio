@@ -1,6 +1,5 @@
 "use client";
 
-import Character from "./Character";
 import Rise from "./Rise";
 import { profile } from "@/data/portfolio";
 
@@ -89,77 +88,13 @@ export default function Hero() {
 
         {/* ── the stage ────────────────────────────── */}
         <Rise inView={false} delay={0.3} y={30} className="relative">
-          <div className="relative mx-auto w-full max-w-[420px]">
-            <div className="paper-card rotate-[1.4deg] p-2.5 sm:p-3">
-              <div className="relative overflow-hidden rounded-xl border border-ink/25 bg-paper-2">
-                <div className="film-strip h-3.5 opacity-75" />
-
-                <div className="relative h-[340px] overflow-hidden sm:h-[400px]">
-                  {/* spotlight */}
-                  <div
-                    className="absolute inset-x-0 top-0 h-full"
-                    style={{
-                      background:
-                        "radial-gradient(60% 55% at 50% 42%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%)",
-                    }}
-                  />
-                  {/* squared paper */}
-                  <div
-                    className="absolute inset-0"
-                    aria-hidden
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, rgba(23,21,15,0.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(23,21,15,0.055) 1px, transparent 1px)",
-                      backgroundSize: "44px 44px",
-                    }}
-                  />
-                  {/* horizon */}
-                  <div className="absolute inset-x-6 bottom-[68px] h-px bg-ink/20" />
-                  <div className="absolute inset-x-14 bottom-[68px] h-[70px] bg-ink/[0.045]" />
-
-                  <Character
-                    pose="pm"
-                    className="absolute bottom-[46px] left-1/2 w-[52%] min-w-[168px] -translate-x-1/2 paper-edge"
-                  />
-
-                  {/* floating props */}
-                  <span className="absolute left-3 top-1/2 -rotate-6 rounded-lg border border-ink/70 bg-paper px-2 py-1 font-mono text-[9px] uppercase tracking-[0.12em] anim-bob">
-                    RAG
-                  </span>
-                  <span
-                    className="absolute right-3 top-[34%] rotate-6 rounded-lg border border-ink/70 bg-paper px-2 py-1 font-mono text-[9px] uppercase tracking-[0.12em] anim-bob"
-                    style={{ animationDelay: "0.4s" }}
-                  >
-                    0 → 1
-                  </span>
-                  <span
-                    className="absolute bottom-[84px] left-2 rotate-3 rounded-lg border border-ink/70 bg-ochre/25 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.12em] anim-bob"
-                    style={{ animationDelay: "0.8s" }}
-                  >
-                    PRD
-                  </span>
-                </div>
-
-                <div className="film-strip h-3.5 rotate-180 opacity-75" />
-
-                <div className="flex items-center justify-between border-t border-ink/25 px-3 py-2">
-                  <span className="mono-label text-[9px] text-ink-soft">Fig. 01 — The PM, with hands</span>
-                  <span className="mono-label text-[9px] text-ink-soft">12 fps</span>
-                </div>
-              </div>
-            </div>
-
-            {/* tape */}
-            <span className="tape -top-3 left-8 w-20 -rotate-[8deg]" aria-hidden />
-            <span className="tape -bottom-2 right-10 w-16 rotate-[6deg]" aria-hidden />
-
-            {/* corner annotation */}
-            <div className="absolute -top-5 right-5 hidden rotate-[4deg] items-center gap-2 rounded-lg border border-ink bg-paper px-2.5 py-1 lg:flex">
-              <span className="h-1.5 w-1.5 rounded-full bg-flame" />
-              <span className="mono-label text-[9px] text-ink-soft">now</span>
-              <span className="h-px w-4 bg-ink/30" />
-              <span className="font-mono text-[9px] uppercase tracking-wider">Begig</span>
-            </div>
+          <div className="relative mx-auto w-full max-w-[460px] rotate-[1deg]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/deepdev-hero-stage.webp"
+              alt="Deepdev Vyas, illustrated, speaking into a microphone, surrounded by labels for the tools he works with — RAG, LLMs, Voice Agents, n8n, Automation, Integrations, Stakeholders, MVPs, Delivery, Discovery, Strategy, and PRD. Captioned Fig. 01, The PM, mid-sentence, with a 'Now — Begig' tag."
+              className="h-auto w-full drop-shadow-[0_18px_40px_-16px_rgba(23,21,15,0.35)]"
+            />
           </div>
         </Rise>
       </div>

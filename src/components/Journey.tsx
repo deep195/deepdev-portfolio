@@ -2,8 +2,15 @@
 
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import Character from "./Character";
-import { acts } from "@/data/portfolio";
+import { acts, type Pose } from "@/data/portfolio";
+
+const POSE_IMAGE: Record<Pose, string> = {
+  student: "/deepdev-student.svg",
+  engineer: "/deepdev-engineer.svg",
+  consultant: "/deepdev-consultant.svg",
+  pm: "/deepdev-pm.svg",
+  speaker: "/deepdev-speaker.svg",
+};
 
 /* ── set dressing, one arrangement per act ────────────────────── */
 
@@ -224,9 +231,17 @@ export default function Journey() {
                   }}
                 />
 
-                <Character
-                  pose={current.pose}
-                  className="absolute bottom-[17%] left-1/2 h-[62%] -translate-x-1/2 paper-edge lg:h-[64%]"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={POSE_IMAGE[current.pose]}
+                  alt={`Deepdev Vyas, illustrated, as ${current.title}`}
+                  className="absolute bottom-[17%] left-1/2 h-[62%] -translate-x-1/2 object-contain lg:h-[64%]"
+                  style={{
+                    WebkitMaskImage: "radial-gradient(58% 62% at 50% 44%, #000 58%, transparent 90%)",
+                    maskImage: "radial-gradient(58% 62% at 50% 44%, #000 58%, transparent 90%)",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                  }}
                 />
 
                 {/* caption strip */}

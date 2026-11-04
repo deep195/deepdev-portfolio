@@ -25,7 +25,7 @@ export const profile = {
   availability: "Open to PM roles in AI-native teams",
 };
 
-export type Pose = "student" | "engineer" | "consultant" | "pm";
+export type Pose = "student" | "engineer" | "consultant" | "pm" | "speaker";
 
 export type Act = {
   id: string;
