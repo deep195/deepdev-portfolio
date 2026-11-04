@@ -6,7 +6,10 @@
  */
 
 const email = "deepdevvyas@gmail.com";
-const linkedin = "https://linkedin.com/in/deepdevvyas";
+const linkedin = "https://www.linkedin.com/in/deepdev-vyas/";
+
+/** Free live-screenshot service — same one already used in the Notion portfolio's own project previews. */
+const shot = (url: string, wait = 4) => `https://image.thum.io/get/width/1280/wait/${wait}/${url}`;
 
 export const profile = {
   name: "Deepdev Vyas",
@@ -186,6 +189,7 @@ export type Project = {
   featured?: boolean;
   githubUrl?: string;
   liveUrl?: string;
+  thumbnail?: string;
 };
 
 export const projects: Project[] = [
@@ -373,6 +377,8 @@ export const projects: Project[] = [
     ],
     differently:
       "Prototype the failure states first — dead battery, no signal, someone leaves the group — because that's where coordination products actually earn trust.",
+    liveUrl: "https://google-journey.lovable.app/",
+    thumbnail: shot("https://google-journey.lovable.app/", 6),
   },
   {
     id: "saathi-credit",
@@ -431,6 +437,7 @@ export type SideProject = {
   stack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  thumbnail?: string;
 };
 
 export const sideProjects: SideProject[] = [
@@ -447,6 +454,7 @@ export const sideProjects: SideProject[] = [
     stack: ["React", "TypeScript", "Supabase", "Python", "O*NET data"],
     githubUrl: "https://github.com/deep195/galaxy",
     liveUrl: "https://galaxy-zeta-brown.vercel.app",
+    thumbnail: shot("https://galaxy-zeta-brown.vercel.app/", 8),
   },
   {
     id: "oauth-setup-guides",
@@ -461,6 +469,7 @@ export const sideProjects: SideProject[] = [
     stack: ["Next.js", "TypeScript", "Readability", "DuckDuckGo search"],
     githubUrl: "https://github.com/deep195/oauth-setup-guides",
     liveUrl: "https://oauth-setup-guides-one.vercel.app",
+    thumbnail: shot("https://oauth-setup-guides-one.vercel.app/"),
   },
   {
     id: "weight-of-bridges",
@@ -475,6 +484,7 @@ export const sideProjects: SideProject[] = [
     stack: ["Next.js", "Supabase pgvector", "Groq", "OpenRouter"],
     githubUrl: "https://github.com/deep195/chatbot",
     liveUrl: "https://weight-of-bridges.vercel.app",
+    thumbnail: shot("https://weight-of-bridges.vercel.app/"),
   },
   {
     id: "voice-agent",
@@ -501,6 +511,7 @@ export const sideProjects: SideProject[] = [
     ],
     stack: ["Next.js", "Supabase", "Slack API", "WhatsApp Cloud API"],
     liveUrl: "https://slack-relay-inky.vercel.app",
+    thumbnail: shot("https://slack-relay-inky.vercel.app/"),
   },
   {
     id: "fridge-chef",
@@ -514,6 +525,7 @@ export const sideProjects: SideProject[] = [
     ],
     stack: ["Lovable", "AI recipe ranking"],
     liveUrl: "https://fridge-chef-ai-05.lovable.app",
+    thumbnail: shot("https://fridge-chef-ai-05.lovable.app/", 5),
   },
 ];
 

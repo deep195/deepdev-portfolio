@@ -81,6 +81,29 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
           </div>
         </div>
 
+        {project.thumbnail && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${project.title}`}
+            className="group/thumb relative block aspect-[21/9] w-full overflow-hidden border-b border-ink/20 bg-ink"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.thumbnail}
+              alt={`${project.title} — live screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/thumb:scale-[1.04]"
+            />
+            <div className="absolute inset-0 flex items-end justify-end bg-ink/0 p-3 opacity-0 transition-all duration-200 group-hover/thumb:bg-ink/15 group-hover/thumb:opacity-100">
+              <span className="flex items-center gap-1.5 rounded-full border border-ink bg-paper px-2.5 py-1 font-mono text-[9px] uppercase tracking-wide text-ink shadow-hard-sm">
+                Visit <ExternalIcon />
+              </span>
+            </div>
+          </a>
+        )}
+
         <div className={`flex flex-1 flex-col gap-5 p-5 sm:p-6 ${project.featured ? "lg:flex-row lg:gap-10" : ""}`}>
           <div className="flex-1">
             <p className="mono-label text-[9px]" style={{ color: accent }}>
@@ -195,69 +218,123 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
   );
 }
 
-const sideAccents = ["#2C6A5D", "#C94C24", "#63456E", "#C08A2E", "#2C6A5D"];
+const sideAccents = ["#2C6A5D", "#C94C24", "#63456E", "#C08A2E", "#2C6A5D", "#C94C24"];
+
+/** No live site to screenshot (a local-only tool) — a waveform stands in for it. */
+function AudioFallback({ accent }: { accent: string }) {
+  const bars = [0.3, 0.6, 0.9, 0.5, 1, 0.4, 0.7, 0.95, 0.35, 0.65, 0.5, 0.8, 0.3, 0.6, 0.45];
+  return (
+    <div
+      className="flex h-full w-full items-center justify-center gap-[3px] px-6"
+      style={{ background: "linear-gradient(135deg, #17150F, #2a2620)" }}
+    >
+      {bars.map((h, idx) => (
+        <span
+          key={idx}
+          className="w-[5px] rounded-full opacity-80 transition-all duration-300 group-hover:opacity-100"
+          style={{ height: `${h * 60}%`, background: idx % 3 === 0 ? accent : "#F4EEE2" }}
+        />
+      ))}
+    </div>
+  );
+}
 
 function SideProjectCard({ project, i }: { project: SideProject; i: number }) {
   const accent = sideAccents[i % sideAccents.length];
+  const visitUrl = project.liveUrl ?? project.githubUrl;
+
   return (
     <Rise delay={(i % 3) * 0.06} y={20}>
       <article
-        className="paper-card flex h-full flex-col gap-3 p-5 transition-transform duration-150 hover:-translate-y-[2px]"
+        className="paper-card group flex h-full flex-col overflow-hidden transition-transform duration-150 hover:-translate-y-[2px]"
         style={{ boxShadow: `0 4px 0 0 ${accent}` }}
       >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-xl leading-tight">{project.title}</h3>
-          <div className="flex shrink-0 items-center gap-2.5 pt-1">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${project.title} on GitHub`}
-                className="text-ink-soft transition-colors hover:text-ink"
-              >
-                <GithubIcon />
-              </a>
-            )}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${project.title} live`}
-                className="text-ink-soft transition-colors hover:text-ink"
-              >
-                <ExternalIcon />
-              </a>
-            )}
-          </div>
-        </div>
+        {/* thumbnail — a real screenshot of the live site, or a waveform for the offline tool */}
+        <a
+          href={visitUrl}
+          target={visitUrl ? "_blank" : undefined}
+          rel="noreferrer"
+          aria-label={visitUrl ? `Open ${project.title}` : project.title}
+          className={`relative block aspect-[16/10] w-full overflow-hidden border-b border-ink/20 bg-ink ${
+            visitUrl ? "cursor-pointer" : "cursor-default"
+          }`}
+        >
+          {project.thumbnail ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={project.thumbnail}
+              alt={`${project.title} — live screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]"
+            />
+          ) : (
+            <AudioFallback accent={accent} />
+          )}
 
-        <p className="mono-label text-[9px]" style={{ color: accent }}>
-          {project.tagline}
-        </p>
-
-        <p className="text-[12.5px] leading-relaxed text-ink-soft">{project.problem}</p>
-
-        <div className="mt-auto flex gap-4 border-t border-ink/15 pt-3">
-          {project.numbers.map((n) => (
-            <div key={n.label}>
-              <div className="font-display text-xl leading-none">{n.value}</div>
-              <div className="mono-label mt-1 text-[8px] leading-relaxed text-ink-soft">{n.label}</div>
+          {visitUrl && (
+            <div className="absolute inset-0 flex items-end justify-end bg-ink/0 p-3 opacity-0 transition-all duration-200 group-hover:bg-ink/15 group-hover:opacity-100">
+              <span className="flex items-center gap-1.5 rounded-full border border-ink bg-paper px-2.5 py-1 font-mono text-[9px] uppercase tracking-wide text-ink shadow-hard-sm">
+                {project.liveUrl ? "Visit" : "Code"} <ExternalIcon />
+              </span>
             </div>
-          ))}
-        </div>
+          )}
+        </a>
 
-        <ul className="flex flex-wrap gap-1.5">
-          {project.stack.map((t) => (
-            <li
-              key={t}
-              className="rounded-full border border-ink/15 bg-paper-2/60 px-2 py-0.5 font-mono text-[8.5px] uppercase tracking-wide text-ink-soft"
-            >
-              {t}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-1 flex-col gap-3 p-5">
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="font-display text-xl leading-tight">{project.title}</h3>
+            <div className="flex shrink-0 items-center gap-2.5 pt-1">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${project.title} on GitHub`}
+                  className="text-ink-soft transition-colors hover:text-ink"
+                >
+                  <GithubIcon />
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${project.title} live`}
+                  className="text-ink-soft transition-colors hover:text-ink"
+                >
+                  <ExternalIcon />
+                </a>
+              )}
+            </div>
+          </div>
+
+          <p className="mono-label text-[9px]" style={{ color: accent }}>
+            {project.tagline}
+          </p>
+
+          <p className="text-[12.5px] leading-relaxed text-ink-soft">{project.problem}</p>
+
+          <div className="mt-auto flex gap-4 border-t border-ink/15 pt-3">
+            {project.numbers.map((n) => (
+              <div key={n.label}>
+                <div className="font-display text-xl leading-none">{n.value}</div>
+                <div className="mono-label mt-1 text-[8px] leading-relaxed text-ink-soft">{n.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <ul className="flex flex-wrap gap-1.5">
+            {project.stack.map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-ink/15 bg-paper-2/60 px-2 py-0.5 font-mono text-[8.5px] uppercase tracking-wide text-ink-soft"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
       </article>
     </Rise>
   );
