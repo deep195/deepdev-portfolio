@@ -502,22 +502,86 @@ export const sideProjects: SideProject[] = [
     stack: ["Next.js", "Supabase", "Slack API", "WhatsApp Cloud API"],
     liveUrl: "https://slack-relay-inky.vercel.app",
   },
+  {
+    id: "fridge-chef",
+    title: "Fridge Chef",
+    tagline: "Turns \"what do I cook tonight?\" into a 10-second decision",
+    problem:
+      "Staring at a fridge full of random ingredients with no plan wastes both food and time. Built an AI app that takes what's actually in your fridge and returns three cookable recipes, ranked by how few extra ingredients you'd need to buy — not a generic recipe dump that assumes a fully stocked kitchen.",
+    numbers: [
+      { value: "3", label: "recipes, ranked by fewest extra buys" },
+      { value: "10s", label: "from ingredients list to a decision" },
+    ],
+    stack: ["Lovable", "AI recipe ranking"],
+    liveUrl: "https://fridge-chef-ai-05.lovable.app",
+  },
 ];
 
-// Every other repo on github.com/deep195 — early coursework and UI
-// exercises with no real problem statement or metrics to report, listed
-// here in full rather than silently left off.
+// Product teardowns and practice case studies from the Notion portfolio —
+// scoped exercises (1–2 weeks each), not shipped software, so no GitHub/live
+// product link — but real problem statements worth showing, with whatever
+// reference link each one has (a deck, or external recognition).
+export type Teardown = {
+  name: string;
+  category: string;
+  problem: string;
+  timeToComplete: string;
+  link?: string;
+};
+
+export const teardowns: Teardown[] = [
+  {
+    name: "TrendTreasure × Onboarding",
+    category: "Teardown — featured",
+    problem:
+      "A personalised onboarding flow for one retail platform serving three different audiences at once — logistics partners (B2B), shoppers (B2C), and store owners (B2B & B2C).",
+    timeToComplete: "2 weeks",
+    link: "https://www.theproductfolks.com/teardown-winners/simran-vazirani-deepdev-vyas",
+  },
+  {
+    name: "Urban Company × Cooks",
+    category: "Teardown",
+    problem:
+      "Extending Urban Company into everyday home food — a service for booking a local cook, designed around how people actually decide what's for dinner.",
+    timeToComplete: "2 weeks",
+    link: "https://drive.google.com/file/d/19jTpLwNPN-zQK9C7zeA-iOt-aiuUVnn9/view?usp=drive_link",
+  },
+  {
+    name: "Improving Zepto's Retention",
+    category: "Teardown",
+    problem:
+      "A built-in cost-splitting feature for group orders, cutting the payment friction that was the real reason repeat group orders dropped off.",
+    timeToComplete: "1 week",
+    link: "https://drive.google.com/file/d/17hrCfHnF5dHpJipDU9yi0l37JOHg1kFL/view?usp=drive_link",
+  },
+  {
+    name: "Improving Swiggy's Order Volume",
+    category: "Teardown",
+    problem:
+      "Growing order volume in a target user segment by sharpening food discovery and delivery-time reliability, backed by deeper demographic insight.",
+    timeToComplete: "1 week",
+    link: "https://drive.google.com/file/d/11Y15D7ZMug_BMf2AAHA_C4eTS6Q1vXvW/view?usp=drive_link",
+  },
+  {
+    name: "Rapido × Metro",
+    category: "Academic",
+    problem:
+      "A competitor and metrics analysis on whether Rapido should host metro ticketing inside its own app, or leave that ground to single-purpose apps.",
+    timeToComplete: "1 week",
+    link: "https://drive.google.com/file/d/1UDdrE2UhDQDUx7jmnigkZ_84i7-hmVTj/view",
+  },
+  {
+    name: "MMT × AI",
+    category: "Academic",
+    problem:
+      "Raising search-to-booking conversion on MakeMyTrip by scoping one new or improved feature, backed by user research and a customer journey map.",
+    timeToComplete: "1 week",
+    link: "https://drive.google.com/file/d/1p43bJsJZH_hUzA0PKpiLNA4I0xUhczWV/view?usp=sharing",
+  },
+];
 export const earlyRepos = [
-  { name: "Capstone", url: "https://github.com/deep195/Capstone", note: "UI capstone project, CodeSandbox" },
-  { name: "Caps_UI", url: "https://github.com/deep195/Caps_UI", note: "UI capstone, supporting repo" },
-  { name: "caps", url: "https://github.com/deep195/caps", note: "UI capstone, CSS exercise" },
-  { name: "ui_capstone", url: "https://github.com/deep195/ui_capstone", note: "UI capstone, CSS exercise" },
-  { name: "ui_assignment", url: "https://github.com/deep195/ui_assignment", note: "UI coursework" },
-  { name: "ui-2", url: "https://github.com/deep195/ui-2", note: "UI coursework" },
-  { name: "ui", url: "https://github.com/deep195/ui", note: "UI coursework" },
   { name: "frank", url: "https://github.com/deep195/frank", note: "JavaScript exercise" },
   { name: "ed", url: "https://github.com/deep195/ed", note: "JavaScript exercise" },
-  { name: "eds", url: "https://github.com/deep195/eds", note: "Adobe Edge Delivery Services boilerplate" },
   { name: "Ajob", url: "https://github.com/deep195/Ajob", note: "Private, early experiment" },
 ];
 

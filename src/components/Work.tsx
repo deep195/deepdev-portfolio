@@ -3,7 +3,15 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Rise from "./Rise";
-import { archive, earlyRepos, projects, sideProjects, type Project, type SideProject } from "@/data/portfolio";
+import {
+  archive,
+  earlyRepos,
+  projects,
+  sideProjects,
+  teardowns,
+  type Project,
+  type SideProject,
+} from "@/data/portfolio";
 
 const accents = ["#C94C24", "#2C6A5D", "#63456E", "#C08A2E"];
 
@@ -302,6 +310,47 @@ export default function Work() {
               <SideProjectCard key={p.id} project={p} i={i} />
             ))}
           </div>
+        </div>
+
+        {/* teardowns & practice — scoped exercises, not shipped software */}
+        <div className="mt-16 border-t border-ink/20 pt-10">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="mono-label text-flame">Reps, not résumé padding</span>
+              <h3 className="mt-2 max-w-xl font-display text-[clamp(1.6rem,3.2vw,2.2rem)] leading-[0.95]">
+                Teardowns & practice.
+              </h3>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
+              Scoped 1–2 week exercises — a deck or doc, not shipped code, so no GitHub link, but a
+              real problem each time.
+            </p>
+          </div>
+
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-ink/20 bg-ink/20 sm:grid-cols-2">
+            {teardowns.map((t) => (
+              <li key={t.name} className="flex flex-col gap-2 bg-paper p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <h4 className="font-display text-base leading-tight">{t.name}</h4>
+                  <span className="mono-label shrink-0 text-[8px] text-flame">{t.category}</span>
+                </div>
+                <p className="text-[12px] leading-relaxed text-ink-soft">{t.problem}</p>
+                <div className="mt-auto flex items-center justify-between gap-3 pt-1">
+                  <span className="mono-label text-[8.5px] text-ink-soft">{t.timeToComplete}</span>
+                  {t.link && (
+                    <a
+                      href={t.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mono-label flex items-center gap-1 text-[8.5px] text-ink underline decoration-ink/30 underline-offset-2 transition-colors hover:decoration-ink"
+                    >
+                      View <ExternalIcon />
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* archive */}
