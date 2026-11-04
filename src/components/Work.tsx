@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Rise from "./Rise";
-import { archive, projects, sideProjects, type Project, type SideProject } from "@/data/portfolio";
+import { archive, earlyRepos, projects, sideProjects, type Project, type SideProject } from "@/data/portfolio";
 
 const accents = ["#C94C24", "#2C6A5D", "#63456E", "#C08A2E"];
 
@@ -320,6 +320,29 @@ export default function Work() {
                     {a.detail} · {a.org}
                   </p>
                 </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* every other repo — coursework and exercises, no real problem
+            statement or metrics, listed in full rather than left off */}
+        <div className="mt-8 border-t border-ink/10 pt-5">
+          <p className="mono-label text-[9px] text-ink-soft">
+            Also on GitHub — early coursework, no real metrics to report
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+            {earlyRepos.map((r) => (
+              <li key={r.name}>
+                <a
+                  href={r.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={r.note}
+                  className="font-mono text-[10px] text-ink-soft underline decoration-ink/20 underline-offset-2 transition-colors hover:text-ink hover:decoration-ink/50"
+                >
+                  {r.name}
+                </a>
               </li>
             ))}
           </ul>

@@ -439,9 +439,9 @@ export const sideProjects: SideProject[] = [
     title: "Skillaxy",
     tagline: "A skill-transferability engine, not an LLM guessing your next career",
     problem:
-      "The early version let an LLM free-form career advice from two job titles — inventing skills and stepping-stone roles that didn't exist. Replaced it with a transferability engine computed from real O*NET occupational data: capability vectors, distinctiveness-weighted overlap scoring, and shortest-path stepping-stone routing through an interactive, pannable skill galaxy — explainable and reproducible instead of guessed.",
+      "The early version let an LLM free-form career advice from two job titles — inventing skills and stepping-stone roles that didn't exist. Replaced it with a transferability engine computed from real O*NET occupational data and real BLS salary data: capability vectors, distinctiveness-weighted overlap scoring, and shortest-path stepping-stone routing through an interactive, pannable skill galaxy — explainable and reproducible instead of guessed.",
     numbers: [
-      { value: "230+", label: "roles, skills & education nodes" },
+      { value: "460+", label: "careers mapped, real BLS salaries" },
       { value: "0", label: "LLM-invented skills left in the output" },
     ],
     stack: ["React", "TypeScript", "Supabase", "Python", "O*NET data"],
@@ -502,6 +502,23 @@ export const sideProjects: SideProject[] = [
     stack: ["Next.js", "Supabase", "Slack API", "WhatsApp Cloud API"],
     liveUrl: "https://slack-relay-inky.vercel.app",
   },
+];
+
+// Every other repo on github.com/deep195 — early coursework and UI
+// exercises with no real problem statement or metrics to report, listed
+// here in full rather than silently left off.
+export const earlyRepos = [
+  { name: "Capstone", url: "https://github.com/deep195/Capstone", note: "UI capstone project, CodeSandbox" },
+  { name: "Caps_UI", url: "https://github.com/deep195/Caps_UI", note: "UI capstone, supporting repo" },
+  { name: "caps", url: "https://github.com/deep195/caps", note: "UI capstone, CSS exercise" },
+  { name: "ui_capstone", url: "https://github.com/deep195/ui_capstone", note: "UI capstone, CSS exercise" },
+  { name: "ui_assignment", url: "https://github.com/deep195/ui_assignment", note: "UI coursework" },
+  { name: "ui-2", url: "https://github.com/deep195/ui-2", note: "UI coursework" },
+  { name: "ui", url: "https://github.com/deep195/ui", note: "UI coursework" },
+  { name: "frank", url: "https://github.com/deep195/frank", note: "JavaScript exercise" },
+  { name: "ed", url: "https://github.com/deep195/ed", note: "JavaScript exercise" },
+  { name: "eds", url: "https://github.com/deep195/eds", note: "Adobe Edge Delivery Services boilerplate" },
+  { name: "Ajob", url: "https://github.com/deep195/Ajob", note: "Private, early experiment" },
 ];
 
 export const archive = [
