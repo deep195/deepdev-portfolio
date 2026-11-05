@@ -62,7 +62,7 @@ export default function TopBar() {
                 <span className="absolute inset-0 animate-ping rounded-full bg-teal opacity-60" />
                 <span className="relative h-2 w-2 rounded-full bg-teal" />
               </span>
-              Open to work
+              Taking new conversations
             </span>
             <a href="#contact" className="btn-hard hidden sm:inline-flex">
               Get in touch

@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "motion/react";
 import Rise from "./Rise";
 import {
   archive,
-  earlyRepos,
   projects,
   sideProjects,
   teardowns,
@@ -92,7 +91,7 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.thumbnail}
-              alt={`${project.title} — live screenshot`}
+              alt={`${project.title}, live screenshot`}
               loading="lazy"
               className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/thumb:scale-[1.04]"
             />
@@ -172,7 +171,7 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
             </svg>
             {open ? "Close the case study" : "Read the case study"}
           </span>
-          <span className="mono-label text-[9px] text-ink-soft">Role — {project.role}</span>
+          <span className="mono-label text-[9px] text-ink-soft">Role: {project.role}</span>
         </button>
 
         <AnimatePresence initial={false}>
@@ -220,7 +219,7 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
 
 const sideAccents = ["#2C6A5D", "#C94C24", "#63456E", "#C08A2E", "#2C6A5D", "#C94C24"];
 
-/** No live site to screenshot (a local-only tool) — a waveform stands in for it. */
+/** No live site to screenshot (a local-only tool): a waveform stands in for it. */
 function AudioFallback({ accent }: { accent: string }) {
   const bars = [0.3, 0.6, 0.9, 0.5, 1, 0.4, 0.7, 0.95, 0.35, 0.65, 0.5, 0.8, 0.3, 0.6, 0.45];
   return (
@@ -249,7 +248,7 @@ function SideProjectCard({ project, i }: { project: SideProject; i: number }) {
         className="paper-card group flex h-full flex-col overflow-hidden transition-transform duration-150 hover:-translate-y-[2px]"
         style={{ boxShadow: `0 4px 0 0 ${accent}` }}
       >
-        {/* thumbnail — a real screenshot of the live site, or a waveform for the offline tool */}
+        {/* thumbnail: a real screenshot of the live site, or a waveform for the offline tool */}
         <a
           href={visitUrl}
           target={visitUrl ? "_blank" : undefined}
@@ -263,7 +262,7 @@ function SideProjectCard({ project, i }: { project: SideProject; i: number }) {
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
               src={project.thumbnail}
-              alt={`${project.title} — live screenshot`}
+              alt={`${project.title}, live screenshot`}
               loading="lazy"
               className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]"
             />
@@ -368,7 +367,7 @@ export default function Work() {
           ))}
         </div>
 
-        {/* side projects — things built and shipped on my own, code and demo public */}
+        {/* side projects: things built and shipped on my own, code and demo public */}
         <div className="mt-16 border-t border-ink/20 pt-10">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -378,7 +377,7 @@ export default function Work() {
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
-              No client brief, no deadline but my own — repo and live demo linked on every card.
+              No client brief, no deadline but my own. Repo and live demo linked on every card.
             </p>
           </div>
 
@@ -389,7 +388,7 @@ export default function Work() {
           </div>
         </div>
 
-        {/* teardowns & practice — scoped exercises, not shipped software */}
+        {/* teardowns & practice: scoped exercises, not shipped software */}
         <div className="mt-16 border-t border-ink/20 pt-10">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -399,7 +398,7 @@ export default function Work() {
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
-              Scoped 1–2 week exercises — a deck or doc, not shipped code, so no GitHub link, but a
+              Scoped 1–2 week exercises: a deck or doc, not shipped code, so no GitHub link, but a
               real problem each time.
             </p>
           </div>
@@ -446,29 +445,6 @@ export default function Work() {
                     {a.detail} · {a.org}
                   </p>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* every other repo — coursework and exercises, no real problem
-            statement or metrics, listed in full rather than left off */}
-        <div className="mt-8 border-t border-ink/10 pt-5">
-          <p className="mono-label text-[9px] text-ink-soft">
-            Also on GitHub — early coursework, no real metrics to report
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
-            {earlyRepos.map((r) => (
-              <li key={r.name}>
-                <a
-                  href={r.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  title={r.note}
-                  className="font-mono text-[10px] text-ink-soft underline decoration-ink/20 underline-offset-2 transition-colors hover:text-ink hover:decoration-ink/50"
-                >
-                  {r.name}
-                </a>
               </li>
             ))}
           </ul>

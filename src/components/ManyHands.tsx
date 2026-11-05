@@ -94,7 +94,7 @@ export default function ManyHands() {
               </div>
 
               <p className="mt-2 text-center font-mono text-[9px] uppercase tracking-[0.2em] text-ink-soft">
-                Fig. 02 — ten hands, one product brain
+                Fig. 02 · ten hands, one product brain
               </p>
             </div>
           </Rise>
@@ -150,7 +150,7 @@ export default function ManyHands() {
         <ul className="sr-only">
           {skills.map((s) => (
             <li key={s.label}>
-              {s.label} — {s.cluster}
+              {s.label}: {s.cluster}
             </li>
           ))}
         </ul>

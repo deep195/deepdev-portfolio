@@ -136,7 +136,7 @@ export default function Journey() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const [act, setAct] = useState(0);
   // While "Play the reel" is driving the sequence, the scroll-position
-  // listener below is ignored — rapid successive programmatic scrollTo
+  // listener below is ignored: rapid successive programmatic scrollTo
   // calls make its progress readings glitch, so autoplay is the sole
   // source of truth for `act` until it finishes.
   const autoplaying = useRef(false);
@@ -276,7 +276,7 @@ export default function Journey() {
                 {/* caption strip */}
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-ink/25 bg-paper/80 px-3 py-1.5 backdrop-blur-[2px]">
                   <span className="mono-label text-[9px] text-ink-soft">
-                    {current.kicker} — {current.org}
+                    {current.kicker} · {current.org}
                   </span>
                   <span className="mono-label text-[9px] text-ink-soft">{current.years}</span>
                 </div>

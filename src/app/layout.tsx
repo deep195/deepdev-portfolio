@@ -28,11 +28,11 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deepdev Vyas — Product Manager",
+  title: "Deepdev Vyas · Product Manager",
   description:
     "A stop-motion career in four acts: student, engineer, consultant, product manager. AI products that ship.",
   openGraph: {
-    title: "Deepdev Vyas — Product Manager",
+    title: "Deepdev Vyas · Product Manager",
     description:
       "A stop-motion career in four acts. Student → Engineer → Consultant → PM.",
     type: "website",

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Film grain that re-rolls in stepped frames — the single cheapest
+ * Film grain that re-rolls in stepped frames: the single cheapest
  * trick for making a clean site feel shot on a tabletop.
  */
 export default function Grain() {

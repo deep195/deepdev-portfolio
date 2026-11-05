@@ -8,7 +8,7 @@
 const email = "deepdevvyas@gmail.com";
 const linkedin = "https://www.linkedin.com/in/deepdev-vyas/";
 
-/** Free live-screenshot service — same one already used in the Notion portfolio's own project previews. */
+/** Free live-screenshot service, the same one already used in the Notion portfolio's own project previews. */
 const shot = (url: string, wait = 4) => `https://image.thum.io/get/width/1280/wait/${wait}/${url}`;
 
 export const profile = {
@@ -22,8 +22,8 @@ export const profile = {
   email,
   links: [
     { label: "Email", value: email, href: `mailto:${email}`, note: "Fastest route" },
-    { label: "LinkedIn", value: "/in/deepdevvyas", href: linkedin, note: "Longer stories" },
-    { label: "Résumé", value: "PDF, one page", href: "#", note: "The formal version" },
+    { label: "LinkedIn", value: "/in/deepdev-vyas", href: linkedin, note: "Longer stories" },
+    { label: "Résumé", value: "PDF, one page", href: "/Deepdev_Vyas_PM_Resume.pdf", note: "The formal version" },
   ],
   availability: "Open to PM roles in AI-native teams",
 };
@@ -52,12 +52,12 @@ export const acts: Act[] = [
     numeral: "I",
     kicker: "Act One",
     title: "The Student",
-    years: "2018 — 2022",
+    years: "2018–2022",
     org: "VIT Vellore",
     role: "B.Tech, Electrical & Electronics",
     line: "I learned how systems fall apart.",
     body:
-      "Four years of circuits, signals, and labs taught me the habit that never left: take the black box apart, name every component, then explain it to someone else. Graduated 8.57/10 — but the real takeaway was learning how to learn something hard, fast.",
+      "Four years of circuits, signals, and labs taught me the habit that never left: take the black box apart, name every component, then explain it to someone else. Graduated 8.57/10, but the real takeaway was learning how to learn something hard, fast.",
     points: [
       "Take the black box apart before you judge it.",
       "Name every component out loud.",
@@ -72,7 +72,7 @@ export const acts: Act[] = [
     numeral: "II",
     kicker: "Act Two",
     title: "The Engineer",
-    years: "2022 — 2023",
+    years: "2022–2023",
     org: "Adobe",
     role: "Associate Technical Consultant",
     line: "I learned how things actually get made.",
@@ -92,7 +92,7 @@ export const acts: Act[] = [
     numeral: "III",
     kicker: "Act Three",
     title: "The Consultant",
-    years: "2023 — 2025",
+    years: "2023–2025",
     org: "Adobe",
     role: "Discovery & delivery, enterprise accounts",
     line: "I learned that the brief is never the problem.",
@@ -100,7 +100,7 @@ export const acts: Act[] = [
       "Sat with customers, watched them struggle, and traced drop-off through funnels in SQL and Adobe Analytics. Rewrote an onboarding flow from 14 steps to 9 and took completion from 40% to 78%. The lesson: people don't want features, they want the confusing part to stop.",
     points: [
       "The brief is a symptom; the workflow is the problem.",
-      "People don't want features — they want the confusion to stop.",
+      "People don't want features, they want the confusion to stop.",
       "Cut 14 steps to 9 and completion doubled.",
     ],
     stat: { value: "3×", label: "ROI on key accounts" },
@@ -112,10 +112,10 @@ export const acts: Act[] = [
     numeral: "IV",
     kicker: "Act Four",
     title: "The Product Manager",
-    years: "2026 — now",
+    years: "2026–now",
     org: "Begig",
     role: "Product Manager, AI engagements",
-    line: "Now I decide what gets made — and what doesn't.",
+    line: "Now I decide what gets made, and what doesn't.",
     body:
       "Run five to eight concurrent AI engagements across fintech, SaaS, and commerce: RAG assistants, voice agents, workflow automation. I scope the MVP, write the PRD, sit in the eval loop, and ship things that survive contact with real users and real invoices.",
     points: [
@@ -200,10 +200,10 @@ export const projects: Project[] = [
     subtitle: "RAG-based Tier-1 support chatbot",
     org: "Begig · SaaS client",
     year: "2026",
-    role: "Product Manager — discovery + delivery",
+    role: "Product Manager · discovery + delivery",
     tags: ["RAG", "Pinecone", "LLM Eval", "PRD"],
     headline:
-      "200+ repetitive tickets a day, 48-hour replies, and a client terrified of hallucination. Eight weeks later the bot was deflecting half of it — with citations.",
+      "200+ repetitive tickets a day, 48-hour replies, and a client terrified of hallucination. Eight weeks later the bot was deflecting half of it, with citations.",
     metrics: [
       { value: "52%", label: "deflection rate" },
       { value: "1.3%", label: "hallucination rate" },
@@ -247,10 +247,10 @@ export const projects: Project[] = [
     subtitle: "AI voice agent for insurance lead qualification",
     org: "Begig · Insurance client",
     year: "2026",
-    role: "Product Manager — end to end",
+    role: "Product Manager · end to end",
     tags: ["Voice AI", "ElevenLabs", "Twilio", "GoHighLevel"],
     headline:
-      "A 4.2-hour callback window was leaking 35% of paid inbound leads. The fix wasn't more reps — it was answering the phone.",
+      "A 4.2-hour callback window was leaking 35% of paid inbound leads. The fix wasn't more reps. It was answering the phone.",
     metrics: [
       { value: "<30s", label: "speed to lead" },
       { value: "88%", label: "qualification accuracy" },
@@ -306,7 +306,7 @@ export const projects: Project[] = [
       {
         step: "Problem",
         text:
-          "A 14-step setup wizard with no progress bar and no save. 60% of new users never finished, and marketing teams — the least technical audience — churned hardest.",
+          "A 14-step setup wizard with no progress bar and no save. 60% of new users never finished, and marketing teams, the least technical audience, churned hardest.",
       },
       {
         step: "Discovery",
@@ -316,7 +316,7 @@ export const projects: Project[] = [
       {
         step: "Define",
         text:
-          "Break setup into three progressive stages — Setup, Configure, Launch — and ship the smallest cut that proves it: progress indicator, 14 steps to 9, inline documentation.",
+          "Break setup into three progressive stages: Setup, Configure, Launch. Ship the smallest cut that proves it: progress indicator, 14 steps to 9, inline documentation.",
       },
       {
         step: "Deliver",
@@ -376,7 +376,7 @@ export const projects: Project[] = [
       },
     ],
     differently:
-      "Prototype the failure states first — dead battery, no signal, someone leaves the group — because that's where coordination products actually earn trust.",
+      "Prototype the failure states first: dead battery, no signal, someone leaves the group, because that's where coordination products actually earn trust.",
     liveUrl: "https://google-journey.lovable.app/",
     thumbnail: shot("https://google-journey.lovable.app/", 6),
   },
@@ -390,7 +390,7 @@ export const projects: Project[] = [
     role: "Product design, PRD, architecture, prototype",
     tags: ["Fintech", "PRD", "Prototype", "Compliance"],
     headline:
-      "I benchmarked 7 Indian lenders and ran a real application through the best-designed one. It rejected a plausible applicant with no explanation — and fired an undisclosed hard credit check before showing a consent screen.",
+      "I benchmarked 7 Indian lenders and ran a real application through the best-designed one. It rejected a plausible applicant with no explanation, and fired an undisclosed hard credit check before showing a consent screen.",
     metrics: [
       { value: "7", label: "lenders benchmarked" },
       { value: "1 of 7", label: "offer a true credit line" },
@@ -400,12 +400,12 @@ export const projects: Project[] = [
       {
         step: "Problem",
         text:
-          "A benchmark of seven lenders — three fintechs, four banks/NBFCs — across product, onboarding, features, and traction found every one underwrites against a bureau file or income floor. A thin or absent credit history is treated as a rejection, not a servable case.",
+          "A benchmark of seven lenders (three fintechs, four banks/NBFCs) across product, onboarding, features, and traction found every one underwrites against a bureau file or income floor. A thin or absent credit history is treated as a rejection, not a servable case.",
       },
       {
         step: "Discovery",
         text:
-          "Ran a real application through the best-designed funnel in the set instead of reading marketing pages. It rejected a plausible applicant with no explanation, and fired an undisclosed hard bureau check the moment identity details were submitted — confirmed by a real-time SMS, with no consent screen shown first.",
+          "Ran a real application through the best-designed funnel in the set instead of reading marketing pages. It rejected a plausible applicant with no explanation, and fired an undisclosed hard bureau check the moment identity details were submitted, confirmed by a real-time SMS, with no consent screen shown first.",
       },
       {
         step: "Define",
@@ -415,12 +415,12 @@ export const projects: Project[] = [
       {
         step: "Deliver",
         text:
-          "Mapped the backend API sequence from authentication through disbursal and built a clickable prototype covering both approved and declined borrower journeys, centred on a consent screen that states exactly what gets checked — and whether it's a soft or hard pull — before it runs.",
+          "Mapped the backend API sequence from authentication through disbursal and built a clickable prototype covering both approved and declined borrower journeys, centred on a consent screen that states exactly what gets checked, and whether it's a soft or hard pull, before it runs.",
       },
       {
         step: "Measure",
         text:
-          "Real click-path testing on my own prototype, not just a static design, surfaced a genuine double-fire bug on a custom checkbox — the kind of defect that ships invisibly when a design is only described, not tested.",
+          "Real click-path testing on my own prototype, not just a static design, surfaced a genuine double-fire bug on a custom checkbox: the kind of defect that ships invisibly when a design is only described, not tested.",
       },
     ],
     differently:
@@ -446,7 +446,7 @@ export const sideProjects: SideProject[] = [
     title: "Skillaxy",
     tagline: "A skill-transferability engine, not an LLM guessing your next career",
     problem:
-      "The early version let an LLM free-form career advice from two job titles — inventing skills and stepping-stone roles that didn't exist. Replaced it with a transferability engine computed from real O*NET occupational data and real BLS salary data: capability vectors, distinctiveness-weighted overlap scoring, and shortest-path stepping-stone routing through an interactive, pannable skill galaxy — explainable and reproducible instead of guessed.",
+      "The early version let an LLM free-form career advice from two job titles, inventing skills and stepping-stone roles that didn't exist. Replaced it with a transferability engine computed from real O*NET occupational data and real BLS salary data: capability vectors, distinctiveness-weighted overlap scoring, and shortest-path stepping-stone routing through an interactive, pannable skill galaxy, explainable and reproducible instead of guessed.",
     numbers: [
       { value: "460+", label: "careers mapped, real BLS salaries" },
       { value: "0", label: "LLM-invented skills left in the output" },
@@ -461,7 +461,7 @@ export const sideProjects: SideProject[] = [
     title: "OAuth Setup Guides",
     tagline: "Tells you what it actually takes to register your own OAuth app",
     problem:
-      "A developer wiring up a third-party integration has no upfront way to know whether registering an OAuth app is a 10-minute form or a multi-week enterprise review — that answer is scattered across each provider's own docs. Built a library of pre-generated guides plus a live pipeline that researches, drafts, and fact-checks a guide for any app on demand, flagging every claim it can't verify as \"not specified\" instead of guessing.",
+      "A developer wiring up a third-party integration has no upfront way to know whether registering an OAuth app is a 10-minute form or a multi-week enterprise review: that answer is scattered across each provider's own docs. Built a library of pre-generated guides plus a live pipeline that researches, drafts, and fact-checks a guide for any app on demand, flagging every claim it can't verify as \"not specified\" instead of guessing.",
     numbers: [
       { value: "14", label: "providers pre-generated, zero API calls" },
       { value: "4", label: "pipeline stages, self fact-checked" },
@@ -476,7 +476,7 @@ export const sideProjects: SideProject[] = [
     title: "The Weight of Bridges",
     tagline: "A RAG chatbot that proves its safety guardrails instead of claiming them",
     problem:
-      "Most RAG demos assert their system is safe. This one measures it: an 8-chapter original story covering serious adult themes is served to 5 personas (Child, Adult, Doctor, Engineer, Finance), and an evals dashboard scores a baseline run with guardrails off against the hardened pipeline — showing the actual score delta the safety layer produces, not just a claim that it works.",
+      "Most RAG demos assert their system is safe. This one measures it: an 8-chapter original story covering serious adult themes is served to 5 personas (Child, Adult, Doctor, Engineer, Finance), and an evals dashboard scores a baseline run with guardrails off against the hardened pipeline, showing the actual score delta the safety layer produces, not just a claim that it works.",
     numbers: [
       { value: "5", label: "personas, one shared knowledge base" },
       { value: "2", label: "pipelines scored: baseline vs. hardened" },
@@ -491,7 +491,7 @@ export const sideProjects: SideProject[] = [
     title: "Local Voice Agent",
     tagline: "A voice assistant with no API keys and no per-token bill",
     problem:
-      "Cloud voice assistants mean an API key, an account, and a bill per token. Built a push-to-talk agent that runs entirely on a laptop — faster-whisper hears, a local Ollama model thinks, Kokoro speaks — with a live dashboard for retuning every voice parameter (pacing, pauses, breath) while it's still mid-sentence, with nothing restarting.",
+      "Cloud voice assistants mean an API key, an account, and a bill per token. Built a push-to-talk agent that runs entirely on a laptop: faster-whisper hears, a local Ollama model thinks, Kokoro speaks, with a live dashboard for retuning every voice parameter (pacing, pauses, breath) while it's still mid-sentence, with nothing restarting.",
     numbers: [
       { value: "$0", label: "per-token cost, fully offline" },
       { value: "3", label: "local models chained, zero cloud calls" },
@@ -504,7 +504,7 @@ export const sideProjects: SideProject[] = [
     title: "Project Chat",
     tagline: "A Slack mirror that strips sensitive data before a freelancer ever sees it",
     problem:
-      "Sharing a Slack channel with an external freelancer means sharing everything in it — money, rates, credentials, client identity. Built a filtered, read-only mirror: a regex-plus-optional-LLM pipeline blocks sensitive messages before they publish, holds anything flagged in a moderation queue, and can relay approved messages on to WhatsApp.",
+      "Sharing a Slack channel with an external freelancer means sharing everything in it: money, rates, credentials, client identity. Built a filtered, read-only mirror: a regex-plus-optional-LLM pipeline blocks sensitive messages before they publish, holds anything flagged in a moderation queue, and can relay approved messages on to WhatsApp.",
     numbers: [
       { value: "<3s", label: "webhook signature-verify & ack" },
       { value: "4s", label: "feed refresh interval" },
@@ -518,7 +518,7 @@ export const sideProjects: SideProject[] = [
     title: "Fridge Chef",
     tagline: "Turns \"what do I cook tonight?\" into a 10-second decision",
     problem:
-      "Staring at a fridge full of random ingredients with no plan wastes both food and time. Built an AI app that takes what's actually in your fridge and returns three cookable recipes, ranked by how few extra ingredients you'd need to buy — not a generic recipe dump that assumes a fully stocked kitchen.",
+      "Staring at a fridge full of random ingredients with no plan wastes both food and time. Built an AI app that takes what's actually in your fridge and returns three cookable recipes, ranked by how few extra ingredients you'd need to buy, not a generic recipe dump that assumes a fully stocked kitchen.",
     numbers: [
       { value: "3", label: "recipes, ranked by fewest extra buys" },
       { value: "10s", label: "from ingredients list to a decision" },
@@ -529,9 +529,9 @@ export const sideProjects: SideProject[] = [
   },
 ];
 
-// Product teardowns and practice case studies from the Notion portfolio —
+// Product teardowns and practice case studies from the Notion portfolio:
 // scoped exercises (1–2 weeks each), not shipped software, so no GitHub/live
-// product link — but real problem statements worth showing, with whatever
+// product link, but real problem statements worth showing, with whatever
 // reference link each one has (a deck, or external recognition).
 export type Teardown = {
   name: string;
@@ -544,9 +544,9 @@ export type Teardown = {
 export const teardowns: Teardown[] = [
   {
     name: "TrendTreasure × Onboarding",
-    category: "Teardown — featured",
+    category: "Teardown · featured",
     problem:
-      "A personalised onboarding flow for one retail platform serving three different audiences at once — logistics partners (B2B), shoppers (B2C), and store owners (B2B & B2C).",
+      "A personalised onboarding flow for one retail platform serving three different audiences at once: logistics partners (B2B), shoppers (B2C), and store owners (B2B & B2C).",
     timeToComplete: "2 weeks",
     link: "https://www.theproductfolks.com/teardown-winners/simran-vazirani-deepdev-vyas",
   },
@@ -554,7 +554,7 @@ export const teardowns: Teardown[] = [
     name: "Urban Company × Cooks",
     category: "Teardown",
     problem:
-      "Extending Urban Company into everyday home food — a service for booking a local cook, designed around how people actually decide what's for dinner.",
+      "Extending Urban Company into everyday home food: a service for booking a local cook, designed around how people actually decide what's for dinner.",
     timeToComplete: "2 weeks",
     link: "https://drive.google.com/file/d/19jTpLwNPN-zQK9C7zeA-iOt-aiuUVnn9/view?usp=drive_link",
   },
@@ -591,15 +591,10 @@ export const teardowns: Teardown[] = [
     link: "https://drive.google.com/file/d/1p43bJsJZH_hUzA0PKpiLNA4I0xUhczWV/view?usp=sharing",
   },
 ];
-export const earlyRepos = [
-  { name: "frank", url: "https://github.com/deep195/frank", note: "JavaScript exercise" },
-  { name: "ed", url: "https://github.com/deep195/ed", note: "JavaScript exercise" },
-  { name: "Ajob", url: "https://github.com/deep195/Ajob", note: "Private, early experiment" },
-];
 
 export const archive = [
   { title: "GenAI internal tooling", detail: "Team of the Quarter, Nov 2024", org: "Adobe" },
-  { title: "Insurjo 2024 — AI insurance concept", detail: "3rd place, 48-hour hackathon", org: "TPF × Descope" },
+  { title: "Insurjo 2024: AI insurance concept", detail: "3rd place, 48-hour hackathon", org: "TPF × Descope" },
   { title: "Product teardown decks", detail: "Top 100, featured", org: "The Product Folks" },
 ];
 

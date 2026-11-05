@@ -47,7 +47,7 @@ export default function Hero() {
 
           <Rise inView={false} delay={0.34}>
             <p className="mt-6 max-w-lg font-display text-[clamp(1.35rem,2.4vw,1.75rem)] leading-snug">
-              Former engineer, former consultant —
+              Former engineer, former consultant:
               <span className="accent"> still a student.</span> {profile.tagline}
             </p>
           </Rise>
@@ -96,7 +96,7 @@ export default function Hero() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/deepdev-hero-stage.webp"
-              alt="Deepdev Vyas, illustrated, speaking into a microphone, surrounded by labels for the tools he works with — RAG, LLMs, Voice Agents, n8n, Automation, Integrations, Stakeholders, MVPs, Delivery, Discovery, Strategy, and PRD. Captioned Fig. 01, The PM, mid-sentence, with a 'Now — Begig' tag."
+              alt="Deepdev Vyas, illustrated, speaking into a microphone, surrounded by labels for the tools he works with: RAG, LLMs, Voice Agents, n8n, Automation, Integrations, Stakeholders, MVPs, Delivery, Discovery, Strategy, and PRD. Captioned Fig. 01, The PM, mid-sentence, with a 'Now - Begig' tag."
               className="h-auto w-full drop-shadow-[0_18px_40px_-16px_rgba(23,21,15,0.35)]"
             />
           </div>

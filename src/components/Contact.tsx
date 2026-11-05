@@ -20,13 +20,13 @@ export default function Contact() {
         <div className="relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
             <Rise>
-              <span className="mono-label text-ochre">Contact — end of reel</span>
+              <span className="mono-label text-ochre">Get in touch</span>
               <h2 className="mt-4 font-display text-[clamp(2.6rem,6.6vw,4.8rem)] leading-[0.9]">
                 Let&apos;s write the
                 <span className="accent block text-[#F0A07A]">next act.</span>
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-paper/60">
-                I&apos;m looking for a product team that ships AI to real users — and wants someone
+                I&apos;m looking for a product team that ships AI to real users, and wants someone
                 who has sat on all three sides of the table. Send me the messy version of the
                 problem.
               </p>
@@ -118,10 +118,8 @@ export default function Contact() {
             <span className="mono-label text-[9px] text-paper/60">
               © {new Date().getFullYear()} {profile.name}
             </span>
-            <span className="mono-label text-[9px] text-paper/55">Stop-motion by CSS steps()</span>
           </div>
           <div className="flex items-center gap-5">
-            <span className="mono-label text-[9px] text-paper/55">Set in Nunito, Fraunces & DM Mono</span>
             <a href="#top" className="mono-label flex items-center gap-2 text-[9px] text-paper/60 hover:text-paper">
               Back to top
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
