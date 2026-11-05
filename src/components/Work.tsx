@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Rise from "./Rise";
 import {
   archive,
+  certifications,
   projects,
   sideProjects,
   teardowns,
@@ -429,8 +430,26 @@ export default function Work() {
           </ul>
         </div>
 
-        {/* archive */}
+        {/* certifications */}
         <div className="mt-12 border-t border-ink/20 pt-6">
+          <div className="flex items-center gap-3">
+            <span className="mono-label text-[9px] text-ink-soft">Certifications</span>
+            <span className="h-px flex-1 bg-ink/10" />
+          </div>
+          <ul className="mt-4 flex flex-wrap gap-1.5">
+            {certifications.map((c) => (
+              <li
+                key={c}
+                className="rounded-full border border-ink/20 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.08em] text-ink-soft"
+              >
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* archive */}
+        <div className="mt-8 border-t border-ink/20 pt-6">
           <div className="flex items-center gap-3">
             <span className="mono-label text-[9px] text-ink-soft">Also in the archive</span>
             <span className="h-px flex-1 bg-ink/10" />

@@ -598,6 +598,13 @@ export const archive = [
   { title: "Product teardown decks", detail: "Top 100, featured", org: "The Product Folks" },
 ];
 
+export const certifications = [
+  "Machine Learning Fundamentals",
+  "Upraised Product Management",
+  "Silver IoT Domain Specialist, Level 8",
+  "Neural Networks and Deep Learning",
+];
+
 export const nav = [
   { label: "The Reel", href: "#reel" },
   { label: "The Hands", href: "#hands" },
