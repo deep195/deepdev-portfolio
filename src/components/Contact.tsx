@@ -26,9 +26,9 @@ export default function Contact() {
                 <span className="accent block text-[#F0A07A]">next act.</span>
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-paper/60">
-                I&apos;m looking for a product team that ships AI to real users, and wants someone
-                who has sat on all three sides of the table. Send me the messy version of the
-                problem.
+                I&apos;m looking for a product team working on India&apos;s money rails:
+                payments, lending, wealth, or the AI layered on top. Someone who has sat on all
+                three sides of the table. Send me the messy version of the problem.
               </p>
             </Rise>
 
@@ -83,7 +83,7 @@ export default function Contact() {
               <div className="my-5 space-y-3">
                 {[
                   ["Role", "Product Manager"],
-                  ["Focus", "AI & LLM products"],
+                  ["Focus", "Fintech & AI products"],
                   ["Based", profile.location],
                   ["Status", profile.availability],
                 ].map(([k, v]) => (

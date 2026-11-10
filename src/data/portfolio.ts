@@ -14,7 +14,7 @@ const shot = (url: string, wait = 4) => `https://image.thum.io/get/width/1280/wa
 export const profile = {
   name: "Deepdev Vyas",
   role: "Product Manager",
-  discipline: "AI & LLM-powered products",
+  discipline: "Fintech & AI products",
   tagline: "I make complicated things feel obvious.",
   subline:
     "Four acts, one through-line: build it, question it, then decide what deserves to exist.",
@@ -25,7 +25,7 @@ export const profile = {
     { label: "LinkedIn", value: "/in/deepdev-vyas", href: linkedin, note: "Longer stories" },
     { label: "Résumé", value: "PDF, one page", href: "/Deepdev_Vyas_PM_Resume.pdf", note: "The formal version" },
   ],
-  availability: "Open to PM roles in AI-native teams",
+  availability: "Open to fintech PM roles in Bangalore",
 };
 
 export type Pose = "student" | "engineer" | "consultant" | "pm" | "speaker";
@@ -189,13 +189,63 @@ export type Project = {
   featured?: boolean;
   githubUrl?: string;
   liveUrl?: string;
+  /** Internal route, e.g. a live console built into this site. */
+  href?: string;
   thumbnail?: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "rag-support",
+    id: "recon-console",
     index: "01",
+    title: "The 0.4% That Never Reconciles",
+    subtitle: "Settlement reconciliation console",
+    org: "Personal · Self-initiated",
+    year: "2026",
+    role: "Product, design, build",
+    tags: ["Payments", "Reconciliation", "Ledger", "SQL"],
+    headline:
+      "12,600 orders a month, 95 that don't match the bank file, and one spreadsheet standing between a merchant and their money. I built the console that decides which ₹1.4L deserves a human.",
+    metrics: [
+      { value: "99.3%", label: "auto-matched, no touch" },
+      { value: "₹1.40L", label: "open exposure" },
+      { value: "95", label: "breaks to work" },
+    ],
+    caseStudy: [
+      {
+        step: "Problem",
+        text:
+          "A payment aggregator settles T+1, but the bank file never quite equals the order book. At 12,600 captures a month, roughly 95 rows don't match, and an ops analyst reconciles them in a spreadsheet while month-end close waits.",
+      },
+      {
+        step: "Discovery",
+        text:
+          "Mapped capture → MDR and GST → batch → bank settlement → merchant ledger. Breaks collapse into eight types, and most of the rows are timing or rounding noise. The real exposure sits in two codes. Triage by rupees, not row count.",
+      },
+      {
+        step: "Define",
+        text:
+          "Three matching passes, a ₹1 written tolerance, a T+2 timing window, and a closed reason-code vocabulary with a named owner per code. Deliberately no ML and no auto-journaling: every break stays explainable to an auditor.",
+      },
+      {
+        step: "Deliver",
+        text:
+          "Built a seeded synthetic month (12,600 captures, 8 merchants, 4 channels, UPI at zero MDR, cards at 1.95% + 18% GST, ₹12 netbanking) with eight injected break types, plus a working console: filters, break detail, ageing, charts and CSV export.",
+      },
+      {
+        step: "Measure",
+        text:
+          "12,670 rows reconcile to 95 exceptions and ₹1.40L open, 0.39% of ₹3.57Cr processed. 99.3% match with no human touch, and every remaining row carries a reason code, an owner and an age.",
+      },
+    ],
+    differently:
+      "Treat late or partial settlement files as a first-class failure mode, and put the journal posting behind an approval gate instead of stopping at the ops queue.",
+    featured: true,
+    href: "/work/recon",
+  },
+  {
+    id: "rag-support",
+    index: "02",
     title: "The Support Agent That Knew Its Limits",
     subtitle: "RAG-based Tier-1 support chatbot",
     org: "Begig · SaaS client",
@@ -238,11 +288,10 @@ export const projects: Project[] = [
     ],
     differently:
       "Start with 20 articles instead of 50 to learn faster, and put the thumbs-up/down feedback loop in on day one rather than week three.",
-    featured: true,
   },
   {
     id: "voice-agent",
-    index: "02",
+    index: "03",
     title: "Answering in 30 Seconds, Not 4 Hours",
     subtitle: "AI voice agent for insurance lead qualification",
     org: "Begig · Insurance client",
@@ -288,7 +337,7 @@ export const projects: Project[] = [
   },
   {
     id: "onboarding",
-    index: "03",
+    index: "04",
     title: "Fourteen Steps Down to Nine",
     subtitle: "Onboarding flow redesign, Adobe Experience Manager",
     org: "Adobe · Enterprise",
@@ -334,7 +383,7 @@ export const projects: Project[] = [
   },
   {
     id: "google-journeys",
-    index: "04",
+    index: "05",
     title: "Google Journeys",
     subtitle: "Group travel concept for Google Maps",
     org: "Personal · Solo PM + designer",
@@ -382,7 +431,7 @@ export const projects: Project[] = [
   },
   {
     id: "saathi-credit",
-    index: "05",
+    index: "06",
     title: "The Consent Screen Competitors Skip",
     subtitle: "Lending product design for India's new-to-credit borrowers",
     org: "Personal · Solo PM + designer",

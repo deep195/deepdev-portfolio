@@ -28,13 +28,13 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deepdev Vyas · Product Manager",
+  title: "Deepdev Vyas · Fintech & AI Product Manager",
   description:
-    "A stop-motion career in four acts: student, engineer, consultant, product manager. AI products that ship.",
+    "A stop-motion career in four acts: student, engineer, consultant, product manager. Fintech and AI products that ship, including a live settlement reconciliation console.",
   openGraph: {
-    title: "Deepdev Vyas · Product Manager",
+    title: "Deepdev Vyas · Fintech & AI Product Manager",
     description:
-      "A stop-motion career in four acts. Student → Engineer → Consultant → PM.",
+      "A stop-motion career in four acts. Student → Engineer → Consultant → PM. Fintech rails, AI guardrails, and a working reconciliation console.",
     type: "website",
   },
 };

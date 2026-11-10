@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import Rise from "./Rise";
 import {
@@ -34,6 +35,7 @@ function ExternalIcon() {
 function ProjectCard({ project, i }: { project: Project; i: number }) {
   const [open, setOpen] = useState(false);
   const accent = accents[i % accents.length];
+  const thumbHref = project.href ?? project.liveUrl;
 
   return (
     <Rise delay={(i % 2) * 0.08} y={26} className={project.featured ? "md:col-span-2" : ""}>
@@ -77,15 +79,23 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
                 <ExternalIcon />
               </a>
             )}
+            {project.href && (
+              <Link
+                href={project.href}
+                className="mono-label hidden items-center gap-1 text-[9px] text-flame transition-opacity hover:opacity-70 sm:flex"
+              >
+                Live console <ExternalIcon />
+              </Link>
+            )}
             <span className="mono-label text-[9px] text-ink-soft">{project.year}</span>
           </div>
         </div>
 
-        {project.thumbnail && (
+        {project.thumbnail && thumbHref && (
           <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
+            href={thumbHref}
+            target={project.href ? undefined : "_blank"}
+            rel={project.href ? undefined : "noreferrer"}
             aria-label={`Open ${project.title}`}
             className="group/thumb relative block aspect-[21/9] w-full overflow-hidden border-b border-ink/20 bg-ink"
           >
@@ -209,6 +219,14 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
                     {project.differently}
                   </p>
                 </div>
+
+                {project.href && (
+                  <div className="sm:col-span-2">
+                    <Link href={project.href} className="btn-hard">
+                      Open the live console →
+                    </Link>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
@@ -348,7 +366,7 @@ export default function Work() {
           <div>
             <span className="mono-label text-flame">Selected work</span>
             <h2 className="mt-3 max-w-2xl font-display text-[clamp(2.2rem,5.4vw,4rem)] leading-[0.92]">
-              Five things I made,
+              {projects.length} things I made,
               <br />
               <span className="accent text-ink-soft">and what they cost.</span>
             </h2>
@@ -358,7 +376,9 @@ export default function Work() {
               Open any card for the decision trail: the problem, the discovery, the trade-off, the
               number.
             </p>
-            <span className="font-display text-4xl leading-none text-ink/15">05</span>
+            <span className="font-display text-4xl leading-none text-ink/15">
+              {String(projects.length).padStart(2, "0")}
+            </span>
           </div>
         </div>
 

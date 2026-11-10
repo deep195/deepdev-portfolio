@@ -1,8 +1,10 @@
 # Deepdev Vyas — a PM portfolio in four acts
 
-A stop-motion-flavoured portfolio for a product manager. Paper-cut character,
-a scroll-driven career reel (student → engineer → consultant → PM), a
-many-armed skills section, and case-study cards with the decision trail.
+A stop-motion-flavoured portfolio for a fintech & AI product manager. Paper-cut
+character, a scroll-driven career reel (student → engineer → consultant → PM),
+a many-armed skills section, six case studies, side builds with public code,
+and one case study that runs as a live console instead of a mockup:
+settlement reconciliation at `/work/recon`.
 
 Built with **Next.js 15** (App Router), **Tailwind CSS v4**, and **Motion**.
 
@@ -34,30 +36,55 @@ No environment variables, no API keys, no database — everything is static.
 | The four career acts (title, org, points, stat) | `src/data/portfolio.ts` → `acts` |
 | The ten arms / skills + clusters | `src/data/portfolio.ts` → `skills`, `skillClusters` |
 | Projects & case studies | `src/data/portfolio.ts` → `projects` |
+| Side builds, teardowns, certifications | `src/data/portfolio.ts` → `sideProjects`, `teardowns`, `certifications` |
 | Archive strip | `src/data/portfolio.ts` → `archive` |
+| Recon data & matching engine | `src/lib/recon/` (`data.ts`, `engine.ts`) |
+| Recon console UI | `src/components/recon/ReconConsole.tsx` |
+| Recon case-study page | `src/app/work/recon/page.tsx` |
 | Colours, type, paper texture, grain | `src/app/globals.css` (`@theme`) |
-| The character illustration | `src/components/Character.tsx` |
+| Character frames & hero stage | `public/deepdev-*.svg`, `public/deepdev-hero-stage.webp` |
 | Section order | `src/app/page.tsx` |
 
-Everything on the page reads from the data file — you can add a fifth project
-by appending one object to `projects` and nothing else needs to change.
+Everything on the page reads from the data file — add a project by appending one
+object to `projects`. Set `href` to an internal route when the project has a
+live page on this site (the reconciliation console does); use `liveUrl` and
+`githubUrl` for everything else.
+
+## The reconciliation console
+
+`/work/recon` is a working settlement-reconciliation console, not a screenshot.
+It ingests a synthetic month of payment captures, runs a three-pass matcher, and
+surfaces every break with a reason code, an owner, and an age.
+
+- **Seeded, not random.** `SEED = 20261031` in `src/lib/recon/data.ts` means every
+  visitor sees the same month, same breaks, same rupees. The "New month" button
+  reseeds for demos, which changes the numbers.
+- **Deterministic on both sides.** `buildRecon(seed)` is pure. The server page and
+  the client console call it independently and get identical figures, so no data
+  is passed through props.
+- **Rules over ML.** Exact pass → ₹1 tolerance pass → orphan pass. Five documented
+  trade-offs live on the case-study page: rules before models, a ₹1 tolerance, a
+  T+2 timing window, no auto-journaling, and a closed reason-code vocabulary.
+- **Fictional by design.** Merchants, volumes, and fee rates are modelled, not
+  client data. The case-study page separates what is real (matching logic, fee
+  treatment, break taxonomy) from what is modelled and what is not built.
+
+To regenerate the dataset, edit the seeded generator in `src/lib/recon/data.ts`
+and the matching passes in `src/lib/recon/engine.ts`. Figures in the case-study
+prose are computed from the same `buildRecon()` call, so they stay true when the
+data changes.
 
 ## The character
 
-One person, drawn once, in four poses. `Character.tsx` holds a fixed palette
-(skin, hair, beard, royal-blue shirt, trousers, red kalava) and four arm paths;
-only the props change per act — mortarboard and notebook, badge and laptop,
-folder and briefcase, microphone. The head, face, glasses, beard and outfit are
-identical in every frame, so the four acts read as the same person rather than
-four illustrations.
+The paper-cut character is now exported as illustration frames rather than drawn
+in code: `public/deepdev-student.svg`, `-engineer`, `-consultant`, `-pm` and
+`-speaker` for the four acts, plus `deepdev-hero-stage.webp` for the hero and
+`deepdev-many-hands.webp` for the skills section. `Journey.tsx` swaps the frame
+on each act cut; because the files share the same palette and proportions, the
+acts read as one person.
 
-Draw order inside the SVG matters: sleeves → held prop → hand → kalava. That is
-why the mic, laptop and briefcase sit *in* the hands instead of floating over
-them.
-
-To swap in real stop-motion frames later, replace the `<svg>` with an `<img>`
-that switches frames on a `steps()` keyframe animation — the rest of the layout
-will not care.
+To swap in real stop-motion frames later, replace those files with the same
+names and aspect ratios. The layout will not care.
 
 ## How the stop-motion feel works
 
@@ -75,6 +102,6 @@ Vercel is the path of least resistance: import the repo, no env vars needed.
 
 ## Still to fill in
 
-- Résumé link is `#` — point it at a real PDF.
-- Project cards use generated covers, not real screenshots.
 - Company dates for the Adobe → Begig stretch are placeholders.
+- The recon console is a self-initiated case with synthetic data; the case-study
+  page says so, and should keep saying so.
